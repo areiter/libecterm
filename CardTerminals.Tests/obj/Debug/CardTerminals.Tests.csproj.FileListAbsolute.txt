@@ -1,0 +1,7 @@
+D:\dev\libecterm\CardTerminals.Tests\bin\Debug\CardTerminals.Tests.exe
+D:\dev\libecterm\CardTerminals.Tests\bin\Debug\CardTerminals.Tests.pdb
+D:\dev\libecterm\CardTerminals.Tests\bin\Debug\CardTerminalLibrary.dll
+D:\dev\libecterm\CardTerminals.Tests\bin\Debug\CardTerminalLibrary.pdb
+D:\dev\libecterm\CardTerminals.Tests\obj\Debug\CardTerminals.Tests.csprojResolveAssemblyReference.cache
+D:\dev\libecterm\CardTerminals.Tests\obj\Debug\CardTerminals.Tests.exe
+D:\dev\libecterm\CardTerminals.Tests\obj\Debug\CardTerminals.Tests.pdb

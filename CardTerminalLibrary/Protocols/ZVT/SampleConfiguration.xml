@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <Transport>Serial</Transport>
+
+  <TransportSettings>
+    <Port>COM7</Port>
+    <BaudRate>9600</BaudRate>
+    <StopBits>One</StopBits>
+  </TransportSettings>
+
+  <RegistrationCommand>
+    <ECRPrintsAdministrationReceipts>True</ECRPrintsAdministrationReceipts>
+    <ECRPrintsPaymentReceipt>True</ECRPrintsPaymentReceipt>
+    <PTDisableAmountInput>True</PTDisableAmountInput>
+    <PTDisableAdministrationFunctions>True</PTDisableAdministrationFunctions>
+  </RegistrationCommand>
+</Config>

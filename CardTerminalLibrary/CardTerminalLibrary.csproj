@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E899822-A4D4-47D4-9DAA-9E8279F2201E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wiffzack.Devices.CardTerminals</RootNamespace>
+    <AssemblyName>CardTerminalLibrary</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\ICommandEnvironment.cs" />
+    <Compile Include="Commands\IEndOfDayCommand.cs" />
+    <Compile Include="Commands\IInitialisationCommand.cs" />
+    <Compile Include="Commands\Data\InitialisationResult.cs" />
+    <Compile Include="Commands\IReportCommand.cs" />
+    <Compile Include="Commands\IResetCommand.cs" />
+    <Compile Include="Commands\IReversalCommand.cs" />
+    <Compile Include="Commands\Data\PaymentResult.cs" />
+    <Compile Include="Commands\Data\CommandResult.cs" />
+    <Compile Include="Commands\IPaymentCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\Data\IData.cs" />
+    <Compile Include="Commands\Data\IntermediateStatus.cs" />
+    <Compile Include="Common\ByteBuffer.cs" />
+    <Compile Include="Common\ByteHelpers.cs" />
+    <Compile Include="Common\XmlHelper.cs" />
+    <Compile Include="Communication\ICommunication.cs" />
+    <Compile Include="Communication\SerialComm.cs" />
+    <Compile Include="Log\AbstractLogger.cs" />
+    <Compile Include="Log\BuiltinLoggerFactory.cs" />
+    <Compile Include="Log\CircularListLogger.cs" />
+    <Compile Include="Log\ForwardingLogger.cs" />
+    <Compile Include="Log\Interfaces.cs" />
+    <Compile Include="Log\LoggerFactory.cs" />
+    <Compile Include="Log\LogManager.cs" />
+    <Compile Include="Log\LogUtils.cs" />
+    <Compile Include="Log\TeeLogger.cs" />
+    <Compile Include="Log\TextLogger.cs" />
+    <Compile Include="PrintSupport\IPrintDocument.cs" />
+    <Compile Include="PrintSupport\IPrintLine.cs" />
+    <Compile Include="PrintSupport\IPrintText.cs" />
+    <Compile Include="PrintSupport\PrintDocument.cs" />
+    <Compile Include="PrintSupport\PrintLine.cs" />
+    <Compile Include="PrintSupport\PrintText.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocols\ProtocolFactory.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\AckSenderApduHandler.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\IntermediateStatusApduHandler.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\IApduHandler.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ApduHandlerDefinitions\PrintApduHandler.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ActivateCardReaderApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ApduBase.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ApduCollection.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\AuthorizationApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\CommandHelpers.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\CompletionApduResponse.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\AbortApduResponse.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\IntermediateStatusApduResponse.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\PrintLineApduResponse.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ResetApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\SystemInfoApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\DiagnosisApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\InitialisationApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\LoadParameterHelper.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ReadCardApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ReportApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\StatusApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\StatusCodes.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\StatusInformationApdu.cs" />
+    <Compile Include="Commands\IDiagnosisCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\ResetCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ZVTCommandEnvironment.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\AuthorizationCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\CommandBase.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\ReportCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\InitialisationCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\NetworkDiagnosisCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Commands\RegistrationCommand.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ControlField.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\ICommandTransmitter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\MagicResponseCommandTransmitter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\AsciiFixedSizeParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\BCDNumberParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\BitConfigParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\RegistrationApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\AsciiLVarParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\CompletionStatusByteParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\FixedSizeParam.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\LVarBCDNumberParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\LVarParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\ParameterEncodingHelper.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\StatusAuthorisationAttributeParam.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\StatusExpDateParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\CurrencyCodeParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\StatusPanEfId.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\StatusPaymentTypeParam.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\StatusTimeParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\IParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\IZvtApdu.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\APDU\ApduResponse.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\OptionalParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\PaymentTypeParam.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\PrefixedParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\RegistrationConfigByteParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\RegistrationServiceByteParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\SingleByteParameter.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\StatusInformationResultCode.cs" />
+    <Compile Include="Protocols\ZVT\ApplicationLayer\Parameters\StatusDateParameter.cs" />
+    <Compile Include="Protocols\ZVT\LangDe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LangDe.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Protocols\ZVT\ResourceHelper.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\CRCChecksum.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\IZvtTransport.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\RS232Tpdu.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\RS232Transport.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\IZvtTpdu.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\TpduBase.cs" />
+    <Compile Include="Protocols\ZVT\TransportLayer\TransportException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Protocols\ZVT\SampleConfiguration.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Protocols\ZVT\LangDe.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LangDe.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\server\Wiffzack\corelib.csproj">
+      <Project>{AF7A661A-FF6B-418E-87D0-CFB9C6FEDD7E}</Project>
+      <Name>corelib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

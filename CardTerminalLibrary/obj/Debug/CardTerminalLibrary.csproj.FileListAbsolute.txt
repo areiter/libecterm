@@ -1,0 +1,7 @@
+D:\dev\libecterm\CardTerminalLibrary\obj\Debug\CardTerminalLibrary.csprojResolveAssemblyReference.cache
+D:\dev\libecterm\CardTerminalLibrary\obj\Debug\Wiffzack.Devices.CardTerminals.Protocols.ZVT.LangDe.resources
+D:\dev\libecterm\CardTerminalLibrary\obj\Debug\CardTerminalLibrary.csproj.GenerateResource.Cache
+D:\dev\libecterm\CardTerminalLibrary\bin\Debug\CardTerminalLibrary.dll
+D:\dev\libecterm\CardTerminalLibrary\bin\Debug\CardTerminalLibrary.pdb
+D:\dev\libecterm\CardTerminalLibrary\obj\Debug\CardTerminalLibrary.dll
+D:\dev\libecterm\CardTerminalLibrary\obj\Debug\CardTerminalLibrary.pdb
